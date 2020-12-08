@@ -8,5 +8,5 @@ double kLETTER_CONTAINER_WIDTH(context){
   return MediaQuery.of(context).size.width/6;
 }
 double kLETTER_CONTAINER_Hight(context){
-  return MediaQuery.of(context).size.width/4.3;
+  return MediaQuery.of(context).size.height/7;
 }

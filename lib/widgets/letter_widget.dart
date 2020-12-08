@@ -47,19 +47,19 @@ class _LetterWidgetState extends State<LetterWidget> {
                       width: kLETTER_CONTAINER_WIDTH(context)/1.6,
                       child: Image.asset(
                           'assets/${kLETTERS_DATA_MAP[widget.letterIndex][kIMAGE]}')),
-                  SizedBox(height: kLETTER_CONTAINER_Hight(context)/33),
+                  SizedBox(height: kLETTER_CONTAINER_Hight(context)/32),
                   Text(
                     kLETTERS_DATA_MAP[widget.letterIndex][kNAME].toUpperCase(),
                     style: TextStyle(
-                        fontSize: kLETTER_CONTAINER_WIDTH(context)/5,
+                        fontSize: kLETTER_CONTAINER_Hight(context)/7.5,
                         color: kLETTER_COLOR_GRAY,
                         fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: kLETTER_CONTAINER_Hight(context)/33),
+                  SizedBox(height: kLETTER_CONTAINER_Hight(context)/32),
                   Text(
                     kLETTERS_DATA_MAP[widget.letterIndex][kCODE],
                     style: TextStyle(
-                        fontSize: kLETTER_CONTAINER_WIDTH(context)/5,
+                        fontSize: kLETTER_CONTAINER_Hight(context)/7.5,
                         color: kLETTER_COLOR_GRAY,
                         fontWeight: FontWeight.bold),
                   ),
