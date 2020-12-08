@@ -17,11 +17,12 @@ class _LetterWidgetState extends State<LetterWidget> {
   Widget build(BuildContext context) {
     return widget.empty
         ? Container(
-            width: kLETTER_CONTAINER_WIDTH,
+            width: kLETTER_CONTAINER_WIDTH(context),
             padding: EdgeInsets.all(8.0),
             margin: EdgeInsets.all(8.0))
         : GestureDetector(
             onTap: () {
+              print(MediaQuery.of(context).size.height);
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -32,32 +33,33 @@ class _LetterWidgetState extends State<LetterWidget> {
               );
             },
             child: Container(
-              width: kLETTER_CONTAINER_WIDTH,
-              // height: kLETTER_CONTAINER_Hight,
-              padding: EdgeInsets.all(8.0),
-              margin: EdgeInsets.all(8.0),
+              width:kLETTER_CONTAINER_WIDTH(context),
+               height: kLETTER_CONTAINER_Hight(context),
+              padding: EdgeInsets.only(top:kLETTER_CONTAINER_WIDTH(context)*.05,left: kLETTER_CONTAINER_WIDTH(context)*.05,right: kLETTER_CONTAINER_WIDTH(context)*.05),
+              margin: EdgeInsets.all(kLETTER_CONTAINER_WIDTH(context)*.05),
               decoration:
                   BoxDecoration(border: Border.all(color: Colors.white)),
               child: Column(
                 children: [
+                  SizedBox(height: kLETTER_CONTAINER_Hight(context)/32),
                   Container(
-                      height: kLETTER_SIZE,
-                      width: kLETTER_SIZE,
+                      height: kLETTER_CONTAINER_WIDTH(context)/1.7,
+                      width: kLETTER_CONTAINER_WIDTH(context)/1.6,
                       child: Image.asset(
                           'assets/${kLETTERS_DATA_MAP[widget.letterIndex][kIMAGE]}')),
-                  SizedBox(height: 8),
+                  SizedBox(height: kLETTER_CONTAINER_Hight(context)/32),
                   Text(
                     kLETTERS_DATA_MAP[widget.letterIndex][kNAME].toUpperCase(),
                     style: TextStyle(
-                        fontSize: 14,
+                        fontSize: kLETTER_CONTAINER_Hight(context)/7.5,
                         color: kLETTER_COLOR_GRAY,
                         fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 8),
+                  SizedBox(height: kLETTER_CONTAINER_Hight(context)/32),
                   Text(
                     kLETTERS_DATA_MAP[widget.letterIndex][kCODE],
                     style: TextStyle(
-                        fontSize: 14,
+                        fontSize: kLETTER_CONTAINER_Hight(context)/7.5,
                         color: kLETTER_COLOR_GRAY,
                         fontWeight: FontWeight.bold),
                   ),
@@ -65,6 +67,6 @@ class _LetterWidgetState extends State<LetterWidget> {
                 ],
               ),
             ),
-          );
+    );
   }
 }

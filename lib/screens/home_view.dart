@@ -12,6 +12,9 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
+    double height=MediaQuery.of(context).size.height;
+    //double width=MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: Stack(
         children: [
@@ -29,15 +32,13 @@ class _HomeViewState extends State<HomeView> {
           ),
           SafeArea(
             child: Container(
-              child: SingleChildScrollView(
-                child: Container(
-                  padding:
-                      EdgeInsets.only(top: 20, bottom: 10, right: 5, left: 5),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: getLetterRows(),
-                  ),
+              child: Container(
+                padding:
+                    EdgeInsets.only(top: height*.01,  right: 5, left: 5),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: getLetterRows(),
                 ),
               ),
             ),

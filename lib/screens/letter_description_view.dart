@@ -92,6 +92,15 @@ class _LetterDescriptionState extends State<LetterDescription> {
               ),
             ),
           ),
+          Align(
+            alignment: Alignment.topLeft,
+            child: Container(
+              margin: EdgeInsets.symmetric(vertical: 20,horizontal: 10),
+              child: IconButton(icon: Icon(Icons.arrow_back,color: Colors.white,size: 30,),onPressed: (){
+                Navigator.pop(context);
+              },),
+            ),
+          )
         ],
       ),
     );
